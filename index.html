@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#3A4A3F" />
 
   <!-- Primary SEO -->
   <title>PinMuse — From Pins to Outfits</title>
@@ -23,37 +24,50 @@
   <meta name="twitter:description" content="PinMuse helps users recreate Pinterest-inspired outfits using AI-powered wardrobe matching and weather-aware styling." />
   <meta name="twitter:image"       content="https://pinmuse.com/assets/og-image.png" />
 
-  <!-- Favicon placeholder -->
+  <!-- Favicon -->
   <link rel="icon"             type="image/svg+xml" href="/assets/pinmuse-logo.svg" />
   <link rel="apple-touch-icon" href="/assets/pinmuse-logo.svg" />
 
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
+  <!-- App icon set (from the PinMuse design system, currentColor strokes) -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="i-home" viewBox="0 0 24 24"><path d="M3 10.5 12 4l9 6.5V20a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z"/></symbol>
+      <symbol id="i-hanger" viewBox="0 0 24 24"><path d="M7 8h10l-1.5 11h-7zM9 8a3 3 0 0 1 6 0"/></symbol>
+      <symbol id="i-inspo" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 8v8M9.5 12.5 12 16l2.5-3.5"/></symbol>
+      <symbol id="i-profile" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M5 21a7 7 0 0 1 14 0"/></symbol>
+      <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+      <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3-3"/></symbol>
+      <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></symbol>
+      <symbol id="i-bag" viewBox="0 0 24 24"><path d="M5 7h14v12H5zM9 7V5h6v2"/></symbol>
+      <symbol id="i-date" viewBox="0 0 24 24"><path d="M5 6.5h14l-7 7-7-7z"/><path d="M12 13.5v5.5"/><path d="M8.5 19h7"/></symbol>
+      <symbol id="i-travel" viewBox="0 0 24 24"><path d="M3 12l18-7-7 18-2.5-8z"/></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></symbol>
+      <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    </defs>
+  </svg>
+
   <!-- ======================================================
-       Navigation
+       Topbar
   ====================================================== -->
-  <header>
-    <nav class="nav" aria-label="Main navigation">
-      <div class="nav-inner">
-        <a href="/" class="nav-brand" aria-label="PinMuse home">
-          <img
-            src="assets/pinmuse-logo.svg"
-            alt="PinMuse logo"
-            class="nav-brand-logo"
-            width="32" height="32"
-          />
-          <span class="nav-brand-name">PinMuse</span>
-        </a>
-        <ul class="nav-links">
-          <li><a href="#features">Features</a></li>
-          <li><a href="#how-it-works">How It Works</a></li>
-          <li><a href="/pricing">Pricing</a></li>
-          <li><a href="#about">About</a></li>
-        </ul>
-      </div>
-    </nav>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a href="/" class="topbar-brand" aria-label="PinMuse home">
+        <svg viewBox="0 0 56 42" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M28 15v-3a4 4 0 1 1 4-4"/><path d="M28 15 7 32h42z"/></svg>
+        <span class="wm">Pin<i>Muse</i></span>
+      </a>
+      <nav class="topbar-nav" aria-label="Main navigation">
+        <a href="#features" class="hide-sm">Features</a>
+        <a href="#how-it-works" class="hide-sm">How It Works</a>
+        <a href="#about" class="hide-sm">About</a>
+        <a href="/pricing" class="topbar-cta">Pricing</a>
+      </nav>
+    </div>
   </header>
 
 
@@ -63,111 +77,124 @@
          Hero
     ==================================================== -->
     <section class="hero" id="hero" aria-labelledby="hero-title">
-      <div class="hero-blob-left" aria-hidden="true"></div>
+      <div class="shell hero-grid">
 
-      <a href="/" class="hero-logo-wrap" aria-label="PinMuse">
-        <img
-          src="assets/pinmuse-logo.svg"
-          alt="PinMuse app icon"
-          class="hero-logo"
-          width="92" height="92"
-        />
-      </a>
+        <div class="hero-copy reveal">
+          <span class="eyebrow">Fashion intelligence · Coming soon</span>
+          <h1 class="display hero-title" id="hero-title">Pin<i>Muse</i></h1>
+          <p class="hero-tagline">From Pins to Outfits</p>
+          <hr class="hero-rule" />
+          <p class="lede">
+            PinMuse helps you recreate Pinterest-inspired outfits using clothing
+            from your own wardrobe — with AI-powered styling and weather-aware
+            recommendations.
+          </p>
+          <div class="hero-cta">
+            <span class="btn btn-light" aria-disabled="true">Coming Soon</span>
+            <a href="#how-it-works" class="btn btn-outline-light">
+              How It Works
+              <svg aria-hidden="true"><use href="#i-arrow"/></svg>
+            </a>
+          </div>
+          <p class="hero-meta">
+            <span>AI-Powered</span><span>Wardrobe Matching</span><span>Weather-Aware</span>
+          </p>
+        </div>
 
-      <p class="hero-eyebrow">Introducing PinMuse</p>
+        <!-- App preview: Home screen -->
+        <div class="hero-visual reveal" aria-hidden="true">
+          <div class="phone">
+            <div class="phone-screen">
+              <div class="phone-island"></div>
+              <div class="phone-status"><span>9:41</span><span class="phone-batt"></span></div>
 
-      <h1 class="hero-title" id="hero-title">PinMuse</h1>
+              <div class="phone-body">
+                <p class="a-kicker">Good morning</p>
+                <p class="a-h1">What are you wearing today?</p>
 
-      <p class="hero-tagline">From Pins to Outfits</p>
+                <div class="a-card a-weather">
+                  <span class="ic"><svg fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><use href="#i-sun"/></svg></span>
+                  <div>
+                    <div class="t">18°</div>
+                    <div class="d">Mild &amp; sunny — light layers</div>
+                  </div>
+                </div>
 
-      <p class="hero-description">
-        PinMuse helps users recreate Pinterest-inspired outfits using clothing
-        from their own wardrobe with AI-powered styling and weather-aware
-        recommendations.
-      </p>
+                <div class="a-occ">
+                  <span class="on"><svg fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><use href="#i-bag"/></svg>Work</span>
+                  <span><svg fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><use href="#i-date"/></svg>Evening</span>
+                  <span><svg fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><use href="#i-travel"/></svg>Travel</span>
+                </div>
 
-      <div class="hero-cta">
-        <a href="#features" class="btn btn-primary">Coming Soon</a>
-        <a href="#how-it-works" class="btn btn-outline">How It Works</a>
+                <div class="a-match">
+                  <figure class="a-pin">
+                    <img src="assets/app-preview/look-office.webp" alt="" width="400" height="600" />
+                    <span class="a-badge">Your pin</span>
+                  </figure>
+                  <div class="a-pieces">
+                    <img src="assets/app-preview/blazer.webp" alt="" width="240" height="240" />
+                    <img src="assets/app-preview/trousers.webp" alt="" width="240" height="240" />
+                    <img src="assets/app-preview/loafers.webp" alt="" width="240" height="240" />
+                  </div>
+                  <span class="a-match-tag"><svg fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-check"/></svg>3 pieces from your wardrobe</span>
+                </div>
+              </div>
+
+              <div class="phone-tabbar">
+                <span class="on"><svg fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><use href="#i-home"/></svg>Home</span>
+                <span><svg fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><use href="#i-hanger"/></svg>Wardrobe</span>
+                <span><svg fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><use href="#i-inspo"/></svg>Inspo</span>
+                <span><svg fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><use href="#i-profile"/></svg>Profile</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
-
-      <p class="hero-badge">
-        <span class="hero-badge-dot" aria-hidden="true"></span>
-        AI-Powered &nbsp;·&nbsp; Wardrobe Matching &nbsp;·&nbsp; Weather-Aware
-      </p>
     </section>
 
 
     <!-- ====================================================
          Features
     ==================================================== -->
-    <section class="features" id="features" aria-labelledby="features-title">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-eyebrow">Core Features</span>
-          <h2 class="section-title" id="features-title">Everything you need<br>to dress smarter</h2>
+    <section class="band alt" id="features" aria-labelledby="features-title">
+      <div class="shell">
+        <div class="sec-head split reveal">
+          <div>
+            <span class="eyebrow clay">01 / Core features</span>
+            <h2 class="sec-title" id="features-title" style="margin-top:22px">Everything you need to dress <i>smarter.</i></h2>
+          </div>
+          <p class="lede">A quiet stylist in your pocket — it reads the looks you love and finds them in the clothes you already own.</p>
         </div>
 
-        <div class="features-grid">
+        <div class="feature-grid">
 
-          <!-- Feature 1: Connect Pinterest -->
-          <article class="feature-card">
-            <div class="feature-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
-                <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
-              </svg>
-            </div>
-            <h3 class="feature-title">Connect Pinterest</h3>
-            <p class="feature-desc">
-              Connect your Pinterest account and browse your saved fashion
-              inspiration boards directly within the app.
-            </p>
+          <article class="feature reveal">
+            <span class="feature-num">01</span>
+            <div class="feature-icon" aria-hidden="true"><svg fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><use href="#i-inspo"/></svg></div>
+            <h3>Connect Pinterest</h3>
+            <p>Connect your Pinterest account and browse your saved fashion inspiration boards directly within the app.</p>
           </article>
 
-          <!-- Feature 2: Upload Your Wardrobe -->
-          <article class="feature-card">
-            <div class="feature-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                <polyline points="17 8 12 3 7 8"/>
-                <line x1="12" y1="3" x2="12" y2="15"/>
-              </svg>
-            </div>
-            <h3 class="feature-title">Upload Your Wardrobe</h3>
-            <p class="feature-desc">
-              Build your digital wardrobe by uploading photos of your clothing
-              items and letting PinMuse catalogue your closet.
-            </p>
+          <article class="feature reveal">
+            <span class="feature-num">02</span>
+            <div class="feature-icon" aria-hidden="true"><svg fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><use href="#i-hanger"/></svg></div>
+            <h3>Upload Your Wardrobe</h3>
+            <p>Build your digital wardrobe by uploading photos of your clothing items and letting PinMuse catalogue your closet.</p>
           </article>
 
-          <!-- Feature 3: AI Outfit Matching -->
-          <article class="feature-card">
-            <div class="feature-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
-              </svg>
-            </div>
-            <h3 class="feature-title">AI Outfit Matching</h3>
-            <p class="feature-desc">
-              PinMuse analyzes your saved looks and intelligently matches them
-              with pieces you already own in your wardrobe.
-            </p>
+          <article class="feature reveal">
+            <span class="feature-num">03</span>
+            <div class="feature-icon" aria-hidden="true"><svg fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><use href="#i-search"/></svg></div>
+            <h3>AI Outfit Matching</h3>
+            <p>PinMuse analyzes your saved looks and intelligently matches them with pieces you already own in your wardrobe.</p>
           </article>
 
-          <!-- Feature 4: Weather-Based Styling -->
-          <article class="feature-card">
-            <div class="feature-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/>
-                <path d="M22 10a3 3 0 0 0-3-3h-2.207a5.502 5.502 0 0 0-10.702.5"/>
-              </svg>
-            </div>
-            <h3 class="feature-title">Weather-Based Styling</h3>
-            <p class="feature-desc">
-              Receive outfit suggestions intelligently adapted to your local
-              weather conditions and the current season.
-            </p>
+          <article class="feature reveal">
+            <span class="feature-num">04</span>
+            <div class="feature-icon" aria-hidden="true"><svg fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><use href="#i-sun"/></svg></div>
+            <h3>Weather-Based Styling</h3>
+            <p>Receive outfit suggestions intelligently adapted to your local weather conditions and the current season.</p>
           </article>
 
         </div>
@@ -178,35 +205,67 @@
     <!-- ====================================================
          How It Works
     ==================================================== -->
-    <section class="how-it-works" id="how-it-works" aria-labelledby="hiw-title">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-eyebrow">The Process</span>
-          <h2 class="section-title" id="hiw-title">Four simple steps<br>to your perfect look</h2>
+    <section class="band forest" id="how-it-works" aria-labelledby="hiw-title">
+      <div class="shell">
+        <div class="sec-head reveal">
+          <span class="eyebrow">02 / The process</span>
+          <h2 class="sec-title" id="hiw-title">Four simple steps<br>to your <i>perfect look.</i></h2>
         </div>
 
-        <div class="steps-grid">
+        <ol class="steps">
+          <li class="step reveal">
+            <span class="step-num" aria-hidden="true">01</span>
+            <h3>Connect Pinterest</h3>
+            <p>Link your account to bring your saved boards into PinMuse.</p>
+          </li>
+          <li class="step reveal">
+            <span class="step-num" aria-hidden="true">02</span>
+            <h3>Choose a saved look</h3>
+            <p>Pick the pin you want to wear — any outfit you've saved.</p>
+          </li>
+          <li class="step reveal">
+            <span class="step-num" aria-hidden="true">03</span>
+            <h3>Upload your wardrobe</h3>
+            <p>Snap your pieces once; PinMuse keeps your closet organised.</p>
+          </li>
+          <li class="step reveal">
+            <span class="step-num" aria-hidden="true">04</span>
+            <h3>Get your outfit</h3>
+            <p>Receive personalized suggestions from clothes you already own.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
 
-          <div class="step">
-            <div class="step-number" aria-hidden="true">01</div>
-            <h3 class="step-title">Connect Pinterest</h3>
+
+    <!-- ====================================================
+         Pricing teaser
+    ==================================================== -->
+    <section class="band" id="pricing" aria-labelledby="pricing-title">
+      <div class="shell pricing-teaser">
+        <div class="reveal">
+          <span class="eyebrow clay">03 / Pricing</span>
+          <h2 class="sec-title" id="pricing-title" style="margin-top:22px">Your wardrobe,<br><i>always free.</i></h2>
+          <p class="lede" style="margin-top:20px">Pay only if you want unlimited AI styling suggestions.</p>
+          <div class="hero-cta">
+            <a href="/pricing" class="btn btn-primary">
+              See pricing
+              <svg aria-hidden="true"><use href="#i-arrow"/></svg>
+            </a>
           </div>
+        </div>
 
-          <div class="step">
-            <div class="step-number" aria-hidden="true">02</div>
-            <h3 class="step-title">Choose a saved look</h3>
+        <div class="plans reveal">
+          <div class="plan plan-mini">
+            <div class="plan-head"><span class="plan-name">Free</span></div>
+            <div class="plan-price"><span class="amt">$0</span></div>
+            <p class="plan-sub">Unlimited wardrobe storage</p>
           </div>
-
-          <div class="step">
-            <div class="step-number" aria-hidden="true">03</div>
-            <h3 class="step-title">Upload your wardrobe</h3>
+          <div class="plan plan-mini featured">
+            <div class="plan-head"><span class="plan-name">Premium</span></div>
+            <div class="plan-price"><span class="amt">$3.99</span><span class="unit">/ mo</span></div>
+            <p class="plan-sub">Unlimited AI styling · or <strong>$39.99 / year</strong></p>
           </div>
-
-          <div class="step">
-            <div class="step-number" aria-hidden="true">04</div>
-            <h3 class="step-title">Get personalized outfit suggestions</h3>
-          </div>
-
         </div>
       </div>
     </section>
@@ -215,14 +274,20 @@
     <!-- ====================================================
          About
     ==================================================== -->
-    <section class="about" id="about" aria-labelledby="about-title">
-      <div class="about-inner">
-        <span class="section-eyebrow" id="about-title">About PinMuse</span>
-        <p class="about-quote">
-          PinMuse is a fashion technology app designed to help users turn
-          inspiration into wearable everyday outfits using artificial
-          intelligence and personal wardrobe matching.
+    <section class="band ink" id="about" aria-labelledby="about-title">
+      <div class="shell">
+        <span class="eyebrow reveal" id="about-title">04 / About PinMuse</span>
+        <p class="about-quote reveal">
+          Turning inspiration into <em>wearable, everyday</em> outfits.
         </p>
+        <div class="about-foot reveal">
+          <p>
+            PinMuse is a fashion technology app designed to help users turn
+            inspiration into wearable everyday outfits using artificial
+            intelligence and personal wardrobe matching.
+          </p>
+          <img src="assets/pinmuse-logo.svg" alt="PinMuse app icon" width="64" height="64" />
+        </div>
       </div>
     </section>
 
@@ -230,14 +295,12 @@
     <!-- ====================================================
          Disclaimer
     ==================================================== -->
-    <section class="disclaimer-section" aria-label="Disclaimer">
-      <div class="container">
-        <div class="disclaimer-box">
-          <p>
-            PinMuse is an independent application and is not affiliated with,
-            endorsed by, or sponsored by Pinterest.
-          </p>
-        </div>
+    <section class="disclaimer" aria-label="Disclaimer">
+      <div class="shell">
+        <p>
+          PinMuse is an independent application and is not affiliated with,
+          endorsed by, or sponsored by Pinterest.
+        </p>
       </div>
     </section>
 
@@ -248,21 +311,26 @@
        Footer
   ====================================================== -->
   <footer class="footer">
-    <div class="footer-inner">
-
-      <span class="footer-brand-name">PinMuse</span>
-
-      <nav class="footer-links" aria-label="Footer navigation">
-        <a href="/pricing">Pricing</a>
-        <a href="/privacy-policy">Privacy Policy</a>
-        <a href="/terms-of-use">Terms of Use</a>
-        <a href="/imprint">Imprint</a>
-      </nav>
-
-      <p class="footer-copy">© PinMuse. All rights reserved.</p>
-
+    <div class="shell">
+      <div class="footer-grid">
+        <div>
+          <a href="/" class="wm">Pin<i>Muse</i></a>
+          <p class="footer-tag">From Pins to Outfits.</p>
+        </div>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="/pricing">Pricing</a>
+          <a href="/privacy-policy">Privacy Policy</a>
+          <a href="/terms-of-use">Terms of Use</a>
+          <a href="/imprint">Imprint</a>
+          <a href="#" class="email-rtl" aria-label="Email PinMuse">moc.esumnip@olleh</a>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <span>© PinMuse. All rights reserved.</span>
+      </div>
     </div>
   </footer>
 
+  <script src="site.js"></script>
 </body>
 </html>

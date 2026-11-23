@@ -20,34 +20,36 @@
   <link rel="icon"             type="image/svg+xml" href="/assets/pinmuse-logo.svg" />
   <link rel="apple-touch-icon" href="/assets/pinmuse-logo.svg" />
 
+  <meta name="theme-color" content="#3A4A3F" />
   <link rel="stylesheet" href="../styles.css" />
 </head>
 <body>
 
   <!-- Navigation -->
-  <header>
-    <nav class="page-nav" aria-label="Page navigation">
-      <div class="nav-inner">
-        <a href="/" class="back-link" aria-label="Back to PinMuse homepage">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <polyline points="15 18 9 12 15 6"/>
-          </svg>
-          PinMuse
-        </a>
-        <span class="nav-brand-name" style="font-family:var(--font-display);font-size:1.1rem;font-weight:500;color:var(--clr-text-secondary);">
-          Privacy Policy
-        </span>
-      </div>
-    </nav>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a href="/" class="topbar-brand" aria-label="PinMuse home">
+        <svg viewBox="0 0 56 42" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M28 15v-3a4 4 0 1 1 4-4"/><path d="M28 15 7 32h42z"/></svg>
+        <span class="wm">Pin<i>Muse</i></span>
+      </a>
+      <nav class="topbar-nav" aria-label="Main navigation">
+        <a href="/#features" class="hide-sm">Features</a>
+        <a href="/#how-it-works" class="hide-sm">How It Works</a>
+        <a href="/#about" class="hide-sm">About</a>
+        <a href="/pricing" class="topbar-cta">Pricing</a>
+      </nav>
+    </div>
   </header>
 
   <main>
 
     <!-- Page Hero -->
     <div class="page-hero">
-      <p class="page-hero-eyebrow">Legal</p>
-      <h1 class="page-hero-title">Privacy Policy</h1>
-      <p class="page-hero-subtitle">Effective Date: <strong>23.11.2026</strong></p>
+      <div class="shell narrow">
+        <span class="eyebrow clay">Legal</span>
+        <h1 class="sec-title">Privacy Policy</h1>
+        <p class="lede">Effective Date: <strong>23.11.2026</strong></p>
+      </div>
     </div>
 
     <!-- Content -->
@@ -361,7 +363,7 @@
         </p>
       </div>
 
-      <p style="margin-top: var(--sp-6); font-size: 0.85rem; color: var(--clr-text-muted);">
+      <p class="page-note">
         We update this policy when our practices change and adjust the effective date above.
       </p>
 
@@ -371,28 +373,26 @@
 
   <!-- Footer -->
   <footer class="footer">
-    <div class="footer-inner">
-      <a href="/" class="footer-brand-name">PinMuse</a>
-      <nav class="footer-links" aria-label="Footer navigation">
-        <a href="/pricing">Pricing</a>
-        <a href="/privacy-policy">Privacy Policy</a>
-        <a href="/terms-of-use">Terms of Use</a>
-        <a href="/imprint">Imprint</a>
-        <a href="#" class="email-rtl" aria-label="Email PinMuse">moc.esumnip@olleh</a>
-      </nav>
-      <p class="footer-copy">© PinMuse. All rights reserved.</p>
+    <div class="shell">
+      <div class="footer-grid">
+        <div>
+          <a href="/" class="wm">Pin<i>Muse</i></a>
+          <p class="footer-tag">From Pins to Outfits.</p>
+        </div>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="/pricing">Pricing</a>
+          <a href="/privacy-policy">Privacy Policy</a>
+          <a href="/terms-of-use">Terms of Use</a>
+          <a href="/imprint">Imprint</a>
+          <a href="#" class="email-rtl" aria-label="Email PinMuse">moc.esumnip@olleh</a>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <span>© PinMuse. All rights reserved.</span>
+      </div>
     </div>
   </footer>
 
-  <script>
-    document.querySelectorAll('a.email-rtl').forEach(function(a) {
-      var email = a.textContent.trim().split('').reverse().join('');
-      a.href = 'mailto:' + email;
-      a.textContent = email;
-      a.style.direction = 'ltr';
-      a.style.unicodeBidi = 'normal';
-    });
-  </script>
-
+  <script src="../site.js"></script>
 </body>
 </html>
